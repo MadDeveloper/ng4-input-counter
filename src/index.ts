@@ -1,35 +1,25 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { InputCounterComponent } from './input-counter.component';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export * from './input-counter.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    BrowserModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    InputCounterComponent
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    InputCounterComponent
   ]
 })
-export class SampleModule {
+export class InputCounterModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
+      ngModule: InputCounterModule,
+      providers: []
     };
   }
 }

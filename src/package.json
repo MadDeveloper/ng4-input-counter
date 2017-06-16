@@ -10,7 +10,18 @@
     "email": "sergent.julien@icloud.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "ng4",
+    "ng2",
+    "angular 4",
+    "angular 2",
+    "angular2",
+    "angular4",
+    "input",
+    "counter",
+    "countdown",
+    "bootstrap",
+    "character"
   ],
   "license": "MIT",
   "bugs": {
@@ -21,6 +32,7 @@
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "bootstrap": "^4.0.0-alpha.6"
   }
 }
