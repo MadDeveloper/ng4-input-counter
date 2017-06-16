@@ -8,13 +8,13 @@
 
 ![](http://g.recordit.co/KAVkmjZBxO.gif)
 
-## Maxlength
+## Minlength
 
-![](http://g.recordit.co/m9nPxXgox2.gif)
+![](http://g.recordit.co/Ww5C5R8B4Z.gif)
 
 ## Both
 
-![](http://g.recordit.co/o3Y0gTx0Op.gif)
+![](http://g.recordit.co/5XUR8OArww.gif)
 
 ## Installation
 

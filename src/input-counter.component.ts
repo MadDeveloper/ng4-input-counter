@@ -46,7 +46,7 @@ const noop = () => {};
         (focus)="onFocus()" 
         (blur)="onBlur()">
       <span *ngIf="enabled" class="text-input-counter">
-        <span *ngIf="displayMinLength()">{{ minlength }}/</span>{{ counter }}<span *ngIf="displayMaxLength()">/{{ maxlength }}</span>
+        <span *ngIf="displayMinLength()">{{ minlength }} characters at least required: </span>{{ counter }}<span *ngIf="displayMaxLength()">/{{ maxlength }}</span>
       </span>
     </div>
   `,
