@@ -1,11 +1,11 @@
 {
-  "name": "ng4-bootstrap-character-counter",
+  "name": "ng4-input-counter",
   "version": "0.1.0",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ng4-bootstrap-character-counter -d docs --hideGenerator",
+    "docs:build": "compodoc -p tsconfig.json -n ng4-input-counter -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MadDeveloper/ng4-bootstrap-character-counter.git"
+    "url": "https://github.com/MadDeveloper/ng4-input-counter.git"
   },
   "author": {
     "name": "maddeveloper",
@@ -24,7 +24,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MadDeveloper/ng4-bootstrap-character-counter.git/issues"
+    "url": "https://github.com/MadDeveloper/ng4-input-counter.git/issues"
   },
   "devDependencies": {
     "@angular/common": "^4.0.0",

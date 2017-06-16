@@ -131,7 +131,7 @@ gulp.task('rollup:umd', function () {
       // The name to use for the module for UMD/IIFE bundles
       // (required for bundles with exports)
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-      moduleName: 'ng4-bootstrap-character-counter',
+      moduleName: 'ng4-input-counter',
 
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
       globals: {
@@ -139,7 +139,7 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
-    .pipe(rename('ng4-bootstrap-character-counter.umd.js'))
+    .pipe(rename('ng4-input-counter.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 

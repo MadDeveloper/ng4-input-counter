@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, forwardRef } from '@angular/core';
+import { Component, Input, AfterViewInit, forwardRef, Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
@@ -14,6 +14,7 @@ const noop = () => {};
   template: `
     <style>
       .input-counter-group {
+        display: inline-block;
         position: relative;
       }
 
@@ -29,14 +30,24 @@ const noop = () => {};
         bottom: -13px;
       }
     </style>
-    <div class="form-group input-counter-group">
-      <input
-        [ngClass]="class" 
-        [maxlength]="maxlength"
+    <div class="input-counter-group">
+      <input 
+        [id]="id" 
+        [type]="type"
+        [ngClass]="className" 
+        [name]="name" 
+        [placeholder]="placeholder" 
+        [maxlength]="maxlength" 
+        [disabled]="disabled" 
+        [pattern]="pattern" 
+        [required]="required" 
+        [readonly]="readonly"
         [(ngModel)]="value"
         (focus)="onFocus()" 
         (blur)="onBlur()">
-      <span *ngIf="enabled" class="text-input-counter">{{ counter }}<span *ngIf="maxlength && counter > 0">/{{ maxlength }}</span></span>
+      <span *ngIf="enabled" class="text-input-counter">
+        <span *ngIf="displayMinLength()">{{ minlength }}/</span>{{ counter }}<span *ngIf="displayMaxLength()">/{{ maxlength }}</span>
+      </span>
     </div>
   `,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
@@ -49,9 +60,31 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
     private enabled: boolean;
 
     @Input()
+    id: string;
+    @Input()
+    type = 'text';
+    @Input()
+    name: '';
+    @Input()
     maxlength: number;
     @Input()
-    class = 'form-control';
+    minlength: number;
+    @Input()
+    className = '';
+    @Input()
+    placeholder = '';
+    @Input()
+    disabled = false;
+    @Input()
+    readonly = false;
+    @Input()
+    pattern = '';
+    @Input()
+    required = false;
+    @Output()
+    focus: EventEmitter<any> = new EventEmitter();
+    @Output()
+    blur: EventEmitter<any> = new EventEmitter();
 
     ngAfterViewInit() {
       this.updateCounter();
@@ -65,13 +98,23 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
       this.enabled = false;
     }
 
+    displayMinLength() {
+      return this.minlength && this.counter < this.minlength;
+    }
+
+    displayMaxLength() {
+      return this.maxlength && this.counter > 0 && !this.displayMinLength();
+    }
+
     onFocus() {
       this.enableCounter();
+      this.focus.emit();
     }
 
     onBlur() {
       this.disableCounter();
       this.onTouchedCallback();
+      this.blur.emit();
     }
 
     updateCounter() {
@@ -84,17 +127,21 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
 
     writeValue(value: any) {
       if (value !== this.innerValue) {
-          this.innerValue = value;
-          this.updateCounter();
+        this.innerValue = value;
+         this.updateCounter();
       }
     }
 
     registerOnChange(fn: any) {
-        this.onChangeCallback = fn;
+      this.onChangeCallback = fn;
     }
 
     registerOnTouched(fn: any) {
-        this.onTouchedCallback = fn;
+      this.onTouchedCallback = fn;
+    }
+
+    private isFunction(obj: any) {
+      return !!(obj && obj.constructor && obj.call && obj.apply);
     }
 
     get value() {
@@ -102,10 +149,10 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
     }
 
     set value(value: any) {
-        if (value !== this.innerValue) {
-            this.innerValue = value;
-            this.updateCounter();
-            this.onChangeCallback(value);
-        }
+      if (value !== this.innerValue) {
+        this.innerValue = value;
+        this.updateCounter();
+        this.onChangeCallback(value);
+      }
     }
 }

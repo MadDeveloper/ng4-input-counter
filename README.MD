@@ -1,71 +1,77 @@
-# ng4-bootstrap-character-counter
+# ng4-input-counter
+
+## Normal
+
+![](http://g.recordit.co/o3Y0gTx0Op.gif)
+
+## Maxlength
+
+![](http://g.recordit.co/KAVkmjZBxO.gif)
+
+## Maxlength
+
+![](http://g.recordit.co/m9nPxXgox2.gif)
+
+## Both
+
+![](http://g.recordit.co/o3Y0gTx0Op.gif)
 
 ## Installation
 
-To install this library, run:
+To install the library, run:
 
 ```bash
-$ npm install ng4-bootstrap-character-counter --save
+$ npm install ng4-input-counter --save
 ```
 
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install ng4-bootstrap-character-counter
-```
-
-and then from your Angular `AppModule`:
+and then from your Angular `AppModule`
 
 ```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-
-// Import your library
-import { SampleModule } from 'ng4-bootstrap-character-counter';
+import { InputCounterModule } from 'ng4-input-counter';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  ...
   imports: [
-    BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    ...
+    InputCounterModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ...
 })
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Now, you can use the component in your templates:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<form>
+  <input-counter 
+    type="email" 
+    placeholder="Email address" 
+    required="true"
+    [(ngModel)]="email">
+  </input-counter>
+</form>
 ```
 
-## Development
+In order to make it more comfortable and compliant as a native input, the most used attributes have been set as input properties. The complete list above:
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
+```typescript
+id: string
+type: string
+className: string
+name: string
+placehold: string
+maxlength: number
+disabled: boolean
+pattern: string
+required: boolean
+readonly: boolean
+ngModel: any
+focus: EventEmitter<any>
+blur: EventEmitter<any>
 ```
 
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
+Note the special case for the `className` property which cannot be set to the native `class` property because the css classes will also be applied to the `<input-counter>` element, and behind the hoot, we cannot use a `class` property like it's a reserved keyword in JavaScript and TypeScript. So the React way has been used for this case.
 
 ## License
 

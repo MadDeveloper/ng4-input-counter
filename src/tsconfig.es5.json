@@ -21,8 +21,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ng4-bootstrap-character-counter.js",
-    "flatModuleId": "ng4-bootstrap-character-counter"
+    "flatModuleOutFile": "ng4-input-counter.js",
+    "flatModuleId": "ng4-input-counter"
   },
   "files": [
     "./index.ts"

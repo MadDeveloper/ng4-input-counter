@@ -1,9 +1,9 @@
 {
-  "name": "ng4-bootstrap-character-counter",
+  "name": "ng4-input-counter",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MadDeveloper/ng4-bootstrap-character-counter.git"
+    "url": "https://github.com/MadDeveloper/ng4-input-counter.git"
   },
   "author": {
     "name": "maddeveloper",
@@ -25,10 +25,10 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MadDeveloper/ng4-bootstrap-character-counter.git/issues"
+    "url": "https://github.com/MadDeveloper/ng4-input-counter.git/issues"
   },
-  "module": "ng4-bootstrap-character-counter.js",
-  "typings": "ng4-bootstrap-character-counter.d.ts",
+  "module": "ng4-input-counter.js",
+  "typings": "ng4-input-counter.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.2.2",
