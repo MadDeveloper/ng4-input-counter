@@ -40,7 +40,7 @@ import { InputCounterModule } from 'ng4-input-counter';
 export class AppModule { }
 ```
 
-Now, you can use the component in your templates:
+## How to use
 
 ```xml
 <form>
@@ -53,23 +53,26 @@ Now, you can use the component in your templates:
 </form>
 ```
 
-In order to make it more comfortable and compliant as a native input, the most used attributes have been set as input properties. The complete list above:
+## Input properties
 
-```typescript
-id: string
-type: string
-className: string
-name: string
-placehold: string
-maxlength: number
-disabled: boolean
-pattern: string
-required: boolean
-readonly: boolean
-ngModel: any
-focus: EventEmitter<any>
-blur: EventEmitter<any>
-```
+In order to make it more comfortable and compliant as a native input, the most used attributes have been set as input properties.
+
+Property | Type | Default value
+- |:-: | -:
+ngModel | any | N/A
+id | string | N/A
+type | string | `'text'`
+className | string | N/A
+name | string | N/A
+placeholder | string | `'text'`
+maxlength | number | N/A
+minlength | number | N/A
+pattern | string | N/A
+disabled | boolean | `false`
+required | boolean | `false`
+readonly | boolean | `false`
+focus | Function | `noop`
+blur | Function | `noop`
 
 Note the special case for the `className` property which cannot be set to the native `class` property because the css classes will also be applied to the `<input-counter>` element, and behind the hoot, we cannot use a `class` property like it's a reserved keyword in JavaScript and TypeScript. So the React way has been used for this case.
 

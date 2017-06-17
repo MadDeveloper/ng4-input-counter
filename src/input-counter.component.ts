@@ -64,21 +64,21 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
     @Input()
     type = 'text';
     @Input()
-    name: '';
+    name: string;
     @Input()
     maxlength: number;
     @Input()
     minlength: number;
     @Input()
-    className = '';
+    className: string;
     @Input()
-    placeholder = '';
+    placeholder: string;
     @Input()
     disabled = false;
     @Input()
     readonly = false;
     @Input()
-    pattern = '';
+    pattern: string;
     @Input()
     required = false;
     @Output()
@@ -138,10 +138,6 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
 
     registerOnTouched(fn: any) {
       this.onTouchedCallback = fn;
-    }
-
-    private isFunction(obj: any) {
-      return !!(obj && obj.constructor && obj.call && obj.apply);
     }
 
     get value() {
