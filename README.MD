@@ -2,7 +2,7 @@
 
 ## Normal
 
-![](http://g.recordit.co/o3Y0gTx0Op.gif)
+![](http://g.recordit.co/VtQnGdw6eX.gif)
 
 ## Maxlength
 
