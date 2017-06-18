@@ -24,7 +24,7 @@ To install the library, run:
 $ npm install ng4-input-counter --save
 ```
 
-and then from your Angular `AppModule`
+and then from your Angular module
 
 ```typescript
 import { InputCounterModule } from 'ng4-input-counter';
@@ -55,26 +55,26 @@ export class AppModule { }
 
 ## Input properties
 
-In order to make it more comfortable and compliant as a native input, the most used attributes have been set as input properties.
+In order to make it more comfortable and compliant as a native input, the most commonly used attributes were defined as input properties.
 
 Property | Type | Default value
-- |:-: | -:
+------------ | ------------------------- | -------------
 ngModel | any | N/A
 id | string | N/A
 type | string | `'text'`
 className | string | N/A
 name | string | N/A
-placeholder | string | `'text'`
+placeholder | string | N/A
 maxlength | number | N/A
 minlength | number | N/A
 pattern | string | N/A
 disabled | boolean | `false`
 required | boolean | `false`
 readonly | boolean | `false`
-focus | Function | `noop`
-blur | Function | `noop`
 
-Note the special case for the `className` property which cannot be set to the native `class` property because the css classes will also be applied to the `<input-counter>` element, and behind the hoot, we cannot use a `class` property like it's a reserved keyword in JavaScript and TypeScript. So the React way has been used for this case.
+You can also bind all angular input events handler, like `(focus)`, `(blur)`, `(keyup)`, `(keydown)`, etc.
+
+Note the special case for the `className` property which cannot be named   to the native `class` property because the css classes will also be applied to the `<input-counter>` element, and behind the hood, we cannot use a `class` property like it's a reserved keyword in JavaScript and TypeScript. So the React way has been used for this case.
 
 ## License
 
