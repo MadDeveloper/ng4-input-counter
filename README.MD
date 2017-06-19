@@ -87,7 +87,7 @@ readonly | boolean | `false`
 
 You can also bind all angular input events handler, like `(focus)`, `(blur)`, `(keyup)`, `(keydown)`, etc.
 
-> Note the special case for the `className` property which cannot be named   to the native `class` property because the css classes will also be applied to the `<input-counter>` element, and behind the hood, we cannot use a `class` property like it's a reserved keyword in JavaScript and TypeScript. So the React way has been used for this case.
+> Note that for the special case `class`, we used `className` instead (like the React way), because of it being a reserved keyword in JavaScript and TypeScript.
 
 ## License
 
