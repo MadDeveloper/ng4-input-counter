@@ -72,7 +72,7 @@ export class InputCounterComponent implements AfterViewInit, ControlValueAccesso
     @Input()
     className: string;
     @Input()
-    placeholder: string;
+    placeholder = '';
     @Input()
     disabled = false;
     @Input()

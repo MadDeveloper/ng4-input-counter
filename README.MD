@@ -77,7 +77,7 @@ id | string | N/A
 type | string | `'text'`
 className | string | N/A
 name | string | N/A
-placeholder | string | N/A
+placeholder | string | `''`
 maxlength | number | N/A
 minlength | number | N/A
 pattern | string | N/A
