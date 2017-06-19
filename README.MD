@@ -44,13 +44,26 @@ export class AppModule { }
 
 ```xml
 <form>
-  <input-counter 
-    type="email" 
-    placeholder="Email address" 
-    required="true"
-    [(ngModel)]="email">
-  </input-counter>
+    <input-counter 
+      type="email" 
+      placeholder="Email address" 
+      required="true"
+      [(ngModel)]="email">
+    </input-counter>
 </form>
+```
+
+### With bootstrap
+
+```xml
+<div class="form-group">
+      <input-counter 
+        [(ngModel)]="email" 
+        name="email" 
+        className="form-control" 
+        placeholder="Email address">
+      </input-counter>
+</div>
 ```
 
 ## Input properties
