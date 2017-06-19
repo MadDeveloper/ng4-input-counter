@@ -1,5 +1,8 @@
 # ng4-input-counter
 
+A very cool input which display characters counter and can be configured to display counter bounds.
+
+
 ## Normal
 
 ![](http://g.recordit.co/VtQnGdw6eX.gif)
@@ -53,41 +56,50 @@ export class AppModule { }
 </form>
 ```
 
-### With bootstrap
+### With Bootstrap
 
 ```xml
 <div class="form-group">
-      <input-counter 
-        [(ngModel)]="email" 
-        name="email" 
-        className="form-control" 
-        placeholder="Email address">
-      </input-counter>
+    <input-counter 
+      [(ngModel)]="email" 
+      name="email" 
+      className="form-control" 
+      placeholder="Email address">
+    </input-counter>
 </div>
 ```
 
-## Input properties
+## API of input-counter
 
-In order to make it more comfortable and compliant as a native input, the most commonly used attributes were defined as input properties.
+**`ngModel: any`**
 
-Property | Type | Default value
------------- | ------------------------- | -------------
-ngModel | any | N/A
-id | string | N/A
-type | string | `'text'`
-className | string | N/A
-name | string | N/A
-placeholder | string | `''`
-maxlength | number | N/A
-minlength | number | N/A
-pattern | string | N/A
-disabled | boolean | `false`
-required | boolean | `false`
-readonly | boolean | `false`
+**`id: string`**
+
+**`type: string = 'text'`**
+
+**`className: string`**
+
+> `className` (like the React way) has been used instead of `class` because of it being a reserved keyword in JavaScript and TypeScript.
+
+
+**`name: string`**
+
+**`placeholder: string = ''`**
+
+**`maxlength: number`**
+
+**`minlength: number`**
+
+**`pattern: string`**
+
+**`disabled: boolean = false`**
+
+**`required: boolean = false`**
+
+**`readonly: boolean = false`**
 
 You can also bind all angular input events handler, like `(focus)`, `(blur)`, `(keyup)`, `(keydown)`, etc.
 
-> Note that for the special case `class`, we used `className` instead (like the React way), because of it being a reserved keyword in JavaScript and TypeScript.
 
 ## License
 

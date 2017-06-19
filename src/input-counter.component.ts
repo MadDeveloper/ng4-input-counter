@@ -14,7 +14,7 @@ const noop = () => {};
   template: `
     <style>
       .input-counter-group {
-        display: inline-block;
+        display: block;
         position: relative;
       }
 
