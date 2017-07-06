@@ -53,11 +53,11 @@ const noop = () => {};
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class InputCounterComponent implements AfterViewInit, ControlValueAccessor {
-    private innerValue: any = '';
-    private onTouchedCallback: () => void = noop;
-    private onChangeCallback: (_: any) => void = noop;
-    private counter: number;
-    private enabled: boolean;
+    innerValue: any = '';
+    onTouchedCallback: () => void = noop;
+    onChangeCallback: (_: any) => void = noop;
+    counter: number;
+    enabled: boolean;
 
     @Input()
     id: string;
